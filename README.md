@@ -2,13 +2,13 @@
 
 ## 使用说明：
 
-fork整个项目或者下载zip到本地，fork 完直接宇宙第一IDE VS编译。由于没有封装，exe在modbus_test/bin/debug 下，也可以直接运行（怕你没环境）
+fork整个项目或者下载zip到本地，fork 完直接宇宙第一IDE VS编译。由于没有封装，exe在modbus_test/bin/release 下，也可以直接运行（怕你没环境）
 
 先建立连接，然后初始化温控探头，才能开始操作
 
 主界面探头温度变化和报表打印为独立按钮
 
-Setting里的设置经量不要去改
+Setting里的设置尽量不要去改
 
 数据记录在sqlite里，不要去改
 
