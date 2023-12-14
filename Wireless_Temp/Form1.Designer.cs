@@ -32,8 +32,11 @@
             metroControlBox1 = new ReaLTaiizor.Controls.MetroControlBox();
             metroTabControl1 = new ReaLTaiizor.Controls.MetroTabControl();
             tabPage1 = new TabPage();
+            dataGridView2 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             pictureBox4 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            metroButton1 = new ReaLTaiizor.Controls.MetroButton();
             metroEllipse2 = new ReaLTaiizor.Controls.MetroEllipse();
             metroEllipse1 = new ReaLTaiizor.Controls.MetroEllipse();
             metroTextBox1 = new ReaLTaiizor.Controls.MetroTextBox();
@@ -44,23 +47,8 @@
             checkBox1 = new CheckBox();
             metroLabel2 = new ReaLTaiizor.Controls.MetroLabel();
             metroLabel1 = new ReaLTaiizor.Controls.MetroLabel();
-            pictureBox3 = new PictureBox();
             pictureBox5 = new PictureBox();
             tabPage2 = new TabPage();
-            dataGridView2 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewTextBoxColumn();
-            Column10 = new DataGridViewTextBoxColumn();
-            Column11 = new DataGridViewTextBoxColumn();
-            Column12 = new DataGridViewTextBoxColumn();
-            metroButton1 = new ReaLTaiizor.Controls.MetroButton();
             formsPlot1 = new ScottPlot.FormsPlot();
             tabPage3 = new TabPage();
             metroTile2 = new ReaLTaiizor.Controls.MetroTile();
@@ -89,12 +77,10 @@
             metroTile1 = new ReaLTaiizor.Controls.MetroTile();
             metroTabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage4.SuspendLayout();
@@ -159,8 +145,9 @@
             // tabPage1
             // 
             tabPage1.BackgroundImageLayout = ImageLayout.Stretch;
+            tabPage1.Controls.Add(dataGridView2);
             tabPage1.Controls.Add(pictureBox4);
-            tabPage1.Controls.Add(pictureBox2);
+            tabPage1.Controls.Add(metroButton1);
             tabPage1.Controls.Add(metroEllipse2);
             tabPage1.Controls.Add(metroEllipse1);
             tabPage1.Controls.Add(metroTextBox1);
@@ -171,7 +158,6 @@
             tabPage1.Controls.Add(checkBox1);
             tabPage1.Controls.Add(metroLabel2);
             tabPage1.Controls.Add(metroLabel1);
-            tabPage1.Controls.Add(pictureBox3);
             tabPage1.Controls.Add(pictureBox5);
             tabPage1.Location = new Point(4, 42);
             tabPage1.Name = "tabPage1";
@@ -181,25 +167,66 @@
             tabPage1.Text = "Main";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dataGridView2
+            // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.BackgroundColor = Color.White;
+            dataGridView2.BorderStyle = BorderStyle.None;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
+            dataGridView2.Location = new Point(623, 376);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(653, 427);
+            dataGridView2.TabIndex = 14;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Sensor Name";
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Sensor Value(℃)";
+            Column2.Name = "Column2";
+            // 
             // pictureBox4
             // 
             pictureBox4.BackgroundImage = Properties.Resources.signal1;
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox4.Location = new Point(1820, 882);
+            pictureBox4.Location = new Point(1820, 879);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(62, 50);
             pictureBox4.TabIndex = 12;
             pictureBox4.TabStop = false;
             pictureBox4.Visible = false;
             // 
-            // pictureBox2
+            // metroButton1
             // 
-            pictureBox2.BackgroundImage = Properties.Resources.Cover;
-            pictureBox2.Location = new Point(233, 165);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(900, 600);
-            pictureBox2.TabIndex = 10;
-            pictureBox2.TabStop = false;
+            metroButton1.DisabledBackColor = Color.FromArgb(120, 65, 177, 225);
+            metroButton1.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
+            metroButton1.DisabledForeColor = Color.Gray;
+            metroButton1.Font = new Font("Microsoft Sans Serif", 10F);
+            metroButton1.HoverBorderColor = Color.FromArgb(95, 207, 255);
+            metroButton1.HoverColor = Color.FromArgb(95, 207, 255);
+            metroButton1.HoverTextColor = Color.White;
+            metroButton1.IsDerivedStyle = true;
+            metroButton1.Location = new Point(855, 286);
+            metroButton1.Name = "metroButton1";
+            metroButton1.NormalBorderColor = Color.FromArgb(65, 177, 225);
+            metroButton1.NormalColor = Color.FromArgb(65, 177, 225);
+            metroButton1.NormalTextColor = Color.White;
+            metroButton1.PressBorderColor = Color.FromArgb(35, 147, 195);
+            metroButton1.PressColor = Color.FromArgb(35, 147, 195);
+            metroButton1.PressTextColor = Color.White;
+            metroButton1.Size = new Size(178, 40);
+            metroButton1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            metroButton1.StyleManager = null;
+            metroButton1.TabIndex = 2;
+            metroButton1.Text = "Real-Time Status Start/Stop";
+            metroButton1.ThemeAuthor = "Taiizor";
+            metroButton1.ThemeName = "MetroLight";
+            metroButton1.Click += metroButton1_Click;
             // 
             // metroEllipse2
             // 
@@ -214,7 +241,7 @@
             metroEllipse2.Image = null;
             metroEllipse2.ImageSize = new Size(64, 64);
             metroEllipse2.IsDerivedStyle = true;
-            metroEllipse2.Location = new Point(1486, 634);
+            metroEllipse2.Location = new Point(884, 809);
             metroEllipse2.Name = "metroEllipse2";
             metroEllipse2.NormalBorderColor = Color.FromArgb(204, 204, 204);
             metroEllipse2.NormalColor = Color.FromArgb(238, 238, 238);
@@ -244,7 +271,7 @@
             metroEllipse1.Image = null;
             metroEllipse1.ImageSize = new Size(64, 64);
             metroEllipse1.IsDerivedStyle = true;
-            metroEllipse1.Location = new Point(1157, 634);
+            metroEllipse1.Location = new Point(6, 809);
             metroEllipse1.Name = "metroEllipse1";
             metroEllipse1.NormalBorderColor = Color.FromArgb(204, 204, 204);
             metroEllipse1.NormalColor = Color.FromArgb(238, 238, 238);
@@ -275,7 +302,7 @@
             metroTextBox1.Image = null;
             metroTextBox1.IsDerivedStyle = true;
             metroTextBox1.Lines = null;
-            metroTextBox1.Location = new Point(1157, 514);
+            metroTextBox1.Location = new Point(279, 205);
             metroTextBox1.MaxLength = 32767;
             metroTextBox1.Multiline = false;
             metroTextBox1.Name = "metroTextBox1";
@@ -294,7 +321,7 @@
             // 
             metroLabel3.Font = new Font("Microsoft YaHei UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             metroLabel3.IsDerivedStyle = true;
-            metroLabel3.Location = new Point(1157, 433);
+            metroLabel3.Location = new Point(6, 205);
             metroLabel3.Name = "metroLabel3";
             metroLabel3.Size = new Size(256, 38);
             metroLabel3.Style = ReaLTaiizor.Enum.Metro.Style.Light;
@@ -319,7 +346,7 @@
             metroBadge2.HoverColor = Color.FromArgb(102, 102, 102);
             metroBadge2.HoverTextColor = Color.White;
             metroBadge2.IsDerivedStyle = true;
-            metroBadge2.Location = new Point(1429, 320);
+            metroBadge2.Location = new Point(514, 82);
             metroBadge2.Name = "metroBadge2";
             metroBadge2.NormalBadgeColor = Color.FromArgb(65, 177, 225);
             metroBadge2.NormalBadgeTextColor = Color.White;
@@ -355,7 +382,7 @@
             metroBadge1.HoverColor = Color.FromArgb(102, 102, 102);
             metroBadge1.HoverTextColor = Color.White;
             metroBadge1.IsDerivedStyle = true;
-            metroBadge1.Location = new Point(1157, 320);
+            metroBadge1.Location = new Point(164, 82);
             metroBadge1.Name = "metroBadge1";
             metroBadge1.NormalBadgeColor = Color.FromArgb(65, 177, 225);
             metroBadge1.NormalBadgeTextColor = Color.White;
@@ -406,7 +433,7 @@
             // 
             metroLabel2.Font = new Font("Microsoft YaHei UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             metroLabel2.IsDerivedStyle = true;
-            metroLabel2.Location = new Point(1157, 262);
+            metroLabel2.Location = new Point(6, 107);
             metroLabel2.Name = "metroLabel2";
             metroLabel2.Size = new Size(152, 34);
             metroLabel2.Style = ReaLTaiizor.Enum.Metro.Style.Light;
@@ -420,7 +447,7 @@
             // 
             metroLabel1.Font = new Font("Microsoft YaHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             metroLabel1.IsDerivedStyle = true;
-            metroLabel1.Location = new Point(1157, 179);
+            metroLabel1.Location = new Point(6, 16);
             metroLabel1.Name = "metroLabel1";
             metroLabel1.Size = new Size(303, 42);
             metroLabel1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
@@ -429,15 +456,6 @@
             metroLabel1.Text = "Tofflon Wireless Temp";
             metroLabel1.ThemeAuthor = "Taiizor";
             metroLabel1.ThemeName = "MetroLight";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox3.Location = new Point(1130, 165);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(496, 600);
-            pictureBox3.TabIndex = 11;
-            pictureBox3.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -451,8 +469,6 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(dataGridView2);
-            tabPage2.Controls.Add(metroButton1);
             tabPage2.Controls.Add(formsPlot1);
             tabPage2.Location = new Point(4, 42);
             tabPage2.Name = "tabPage2";
@@ -462,113 +478,12 @@
             tabPage2.Text = "Status";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
-            // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView2.BackgroundColor = Color.White;
-            dataGridView2.BorderStyle = BorderStyle.None;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column11, Column12 });
-            dataGridView2.Location = new Point(7, 62);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(1874, 55);
-            dataGridView2.TabIndex = 4;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Sensor1";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Sensor2";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Sensor3";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Sensor4";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Sensor5";
-            Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Sensor6";
-            Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Sensor7";
-            Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Sensor8";
-            Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Sensor9";
-            Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            Column10.HeaderText = "Sensor10";
-            Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            Column11.HeaderText = "Sensor11";
-            Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            Column12.HeaderText = "Sensor12";
-            Column12.Name = "Column12";
-            // 
-            // metroButton1
-            // 
-            metroButton1.DisabledBackColor = Color.FromArgb(120, 65, 177, 225);
-            metroButton1.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
-            metroButton1.DisabledForeColor = Color.Gray;
-            metroButton1.Font = new Font("Microsoft Sans Serif", 10F);
-            metroButton1.HoverBorderColor = Color.FromArgb(95, 207, 255);
-            metroButton1.HoverColor = Color.FromArgb(95, 207, 255);
-            metroButton1.HoverTextColor = Color.White;
-            metroButton1.IsDerivedStyle = true;
-            metroButton1.Location = new Point(856, 16);
-            metroButton1.Name = "metroButton1";
-            metroButton1.NormalBorderColor = Color.FromArgb(65, 177, 225);
-            metroButton1.NormalColor = Color.FromArgb(65, 177, 225);
-            metroButton1.NormalTextColor = Color.White;
-            metroButton1.PressBorderColor = Color.FromArgb(35, 147, 195);
-            metroButton1.PressColor = Color.FromArgb(35, 147, 195);
-            metroButton1.PressTextColor = Color.White;
-            metroButton1.Size = new Size(178, 40);
-            metroButton1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            metroButton1.StyleManager = null;
-            metroButton1.TabIndex = 2;
-            metroButton1.Text = "Real-Time Status Start/Stop";
-            metroButton1.ThemeAuthor = "Taiizor";
-            metroButton1.ThemeName = "MetroLight";
-            metroButton1.Click += metroButton1_Click;
-            // 
             // formsPlot1
             // 
-            formsPlot1.Location = new Point(7, 123);
+            formsPlot1.Location = new Point(7, 6);
             formsPlot1.Margin = new Padding(4, 3, 4, 3);
             formsPlot1.Name = "formsPlot1";
-            formsPlot1.Size = new Size(1874, 806);
+            formsPlot1.Size = new Size(1874, 923);
             formsPlot1.TabIndex = 1;
             // 
             // tabPage3
@@ -839,6 +754,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // statusStrip1
             // 
@@ -916,12 +832,10 @@
             metroTabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -935,7 +849,7 @@
         }
 
         #endregion
-        private ReaLTaiizor.Manager.MetroStyleManager metroStyleManager1;
+        //private ReaLTaiizor.Manager.MetroStyleManager metroStyleManager1;
         private ReaLTaiizor.Controls.MetroControlBox metroControlBox1;
         private ReaLTaiizor.Controls.MetroTabControl metroTabControl1;
         private TabPage tabPage1;
@@ -977,22 +891,10 @@
         private Label label6;
         private Label label7;
         private ReaLTaiizor.Controls.MetroTile metroTile2;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
         private DataGridView dataGridView2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column12;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
     }
 }

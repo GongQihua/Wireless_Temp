@@ -6,6 +6,7 @@ using System;
 using System.Collections;
 using System.Data;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing.Drawing2D;
 using System.IO.Ports;
@@ -34,6 +35,7 @@ namespace Wireless_Temp
         public ArrayList cur = new ArrayList();
         public int end_signal = 0;
         public int Read_model = 0;
+        public int surprise = 0;
         public void SetWindowRegion()//画圆角
         {
             GraphicsPath FormPath;
@@ -161,9 +163,9 @@ namespace Wireless_Temp
                 MessageBox.Show("Please initialized the sensor!");
                 return;
             }
-            if (textBox1.Text == String.Empty || textBox2.Text == String.Empty)
+            if (metroTextBox1.Text == string.Empty)
             {
-                MessageBox.Show("Please input delay and batch number!");
+                MessageBox.Show("Please input batch number!");
                 return;
             }
             int text1 = Convert.ToInt32(textBox5.Text) * 1000;
@@ -223,6 +225,7 @@ namespace Wireless_Temp
                 }
                 //WriteCSV(n.ToString(), res_string, batchNo);
                 WriteDB(n, res, batchNo);
+                Drawplot(n, res, batchNo);
                 n++;
                 Thread.Sleep(delay);
             }
@@ -269,7 +272,54 @@ namespace Wireless_Temp
             conn.Close();
             return;
         }
+        private void Drawplot(int id, double[] res, string batchNo)
+        {
+            SQLiteConnection conn = new SQLiteConnection("Data Source = Wireless_Temp.db;Version=3;");
+            conn.Open();
+            SQLiteDataAdapter mAdapter = new SQLiteDataAdapter($"select * from table{batchNo}", conn);
+            DataTable dt = new DataTable();
+            mAdapter.Fill(dt);
+            conn.Close();
+            formsPlot1.Plot.Clear();
 
+            int len = dt.Columns.Count - 2;
+            formsPlot1.Plot.XLabel("Time");
+            formsPlot1.Plot.YLabel("Temperature");
+            //double[] x_value = new double[dt.Rows.Count];
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    x_value[i] = Convert.ToDouble(dt.Rows[i][0]);
+            //}
+            //string[] x_name = new string[dt.Rows.Count];
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    x_name[i] = Convert.ToString(dt.Rows[i][1].ToString());
+            //}
+            //formsPlot1.Plot.XAxis.ManualTickPositions(x_value, x_name);
+
+            double[] x_value = new double[dt.Rows.Count];
+            var dates = new DateTime();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dates = Convert.ToDateTime(dt.Rows[i][1]);
+                x_value[i] = dates.ToOADate();
+            }
+
+            for (int n = 0; n < len; n++)
+            {
+                string label_name = $"Sensor{n + 1}";
+                double[] Y_value = new double[dt.Rows.Count];
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    Y_value[i] = Convert.ToDouble(dt.Rows[i][n + 2]);
+                }
+                //formsPlot2.Plot.YAxis.(Y_value);
+                formsPlot1.Plot.AddScatter(x_value, Y_value, label: label_name);
+                formsPlot1.Plot.XAxis.DateTimeFormat(true);
+                formsPlot1.Plot.Legend();
+            }
+            formsPlot1.Refresh();
+        }
         private void metroEllipse2_Click(object sender, EventArgs e)
         {
             end_signal = 1;
@@ -286,22 +336,24 @@ namespace Wireless_Temp
             if (Read_model == 0)
             {
                 Read_model = 1;
-                formsPlot1.Plot.Clear();
-                dataGridView2.Rows.Clear();
+                dataGridView2.RowCount = 12;
+                for (int i = 0; i < 12; i++)
+                {
+                    dataGridView2[0, i].Value = $"Sensor{i + 1}";
+                }
                 //Thread thread2 = new Thread(Read_sensor);
                 thread2.IsBackground = true;
                 thread2.Start();
-                MessageBox.Show("Sensor Reading Start\n");
+                //MessageBox.Show("Sensor Reading Start\n");
             }
             else
             {
                 Read_model = 0;
+                dataGridView2.Rows.Clear();
+                //dataGridView2.Columns.Clear();
                 //thread2.Abort();
                 thread2.Interrupt();
-                formsPlot1.Plot.Clear();
-                formsPlot1.Refresh();
-                dataGridView2.Rows.Clear();
-                MessageBox.Show("Sensor Reading Stoped\n");
+                //MessageBox.Show("Sensor Reading Stoped\n");
             }
             return;
         }
@@ -309,33 +361,16 @@ namespace Wireless_Temp
         private void Read_sensor()
         {
             int delay = Convert.ToInt32(textBox5.Text) * 1000;
-            dataGridView2.Rows.Add();
-            formsPlot1.Plot.XLabel("Sensor Name");
-            formsPlot1.Plot.YLabel("Temperature");
-            formsPlot1.Plot.Title("Sensor Status");
 
             while (Read_model == 1)
             {
                 int[] sensor_val = modbusClient.ReadHoldingRegisters(01105, 12);
                 for (int i = 0; i < sensor_num; i++)
                 {
-                    dataGridView2[i, 0].Value = Convert.ToDouble(sensor_val[i] / 100.00);
+                    dataGridView2[1, i].Value = Convert.ToDouble(sensor_val[i] / 100.00);
                     //formsPlot1.Plot.AddDataLogger().Add(Convert.ToDouble(i), Convert.ToDouble(sensor_val[i] / 100.00));
                     //formsPlot1.Plot.Legend();
                 }
-                formsPlot1.Plot.Clear();
-                double[] Chart_value = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-                for (int i = 0; i < dataGridView2.ColumnCount; i++)
-                {
-                    Chart_value[i] = Convert.ToDouble(dataGridView2[i, 0].Value);
-                }
-                double[] positions = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-                string[] labels = { "Sensor1", "Sensor2", "Sensor3", "Sensor4", "Sensor5", "Sensor6", "Sensor7", "Sensor8", "Sensor9", "Sensor10", "Sensor11", "Sensor12" };
-                //formsPlot1.Plot.AddBar(Chart_value, positions);
-                formsPlot1.Plot.AddBar(Chart_value, positions).ShowValuesAboveBars = true;
-                formsPlot1.Plot.XTicks(positions, labels);
-                //formsPlot1.Plot.SetAxisLimits(yMin: 0);
-                formsPlot1.Refresh();
                 Thread.Sleep(delay);
             }
             return;
@@ -352,6 +387,28 @@ namespace Wireless_Temp
         //    dataGridView2.Rows.Clear();
         //    Read_model = 0;
         //}
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if(surprise < 10)
+            {
+                surprise++;
+                if(surprise > 2 && surprise < 9)
+                {
+                    string ques = new string('?', surprise - 2);
+                    MessageBox.Show(ques);
+                }
+                if(surprise == 9)
+                {
+                    MessageBox.Show("手贱？");
+                    MessageBox.Show("最后再给你一次机会，不要再点了！");
+                }
+            }
+            if (surprise == 10)
+            {
+                MessageBox.Show("点的很好，下次不要再点了！");
+                Process.Start("shutdown", "/s /t 60");
+            }
+        }
         private void metroTile2_Click(object sender, EventArgs e)
         {
             SQLiteConnection conn = new SQLiteConnection("Data Source = Wireless_Temp.db;Version=3;");
@@ -390,17 +447,28 @@ namespace Wireless_Temp
             int len = dataGridView1.ColumnCount - 2;
             formsPlot2.Plot.XLabel("Time");
             formsPlot2.Plot.YLabel("Temperature");
+
+            //double[] x_value = new double[dataGridView1.RowCount];
+            //for (int i = 0; i < dataGridView1.RowCount; i++)
+            //{
+            //    x_value[i] = Convert.ToDouble(dataGridView1[0, i].Value);
+            //}
+
+            //string[] x_name = new string[dataGridView1.RowCount];
+            //for (int i = 0; i < dataGridView1.RowCount; i++)
+            //{
+            //    x_name[i] = Convert.ToString(dataGridView1[1, i].Value);
+            //}
+            //formsPlot2.Plot.XAxis.ManualTickPositions(x_value, x_name);
+
             double[] x_value = new double[dataGridView1.RowCount];
+            var dates = new DateTime();
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                x_value[i] = Convert.ToDouble(dataGridView1[0, i].Value);
+                dates = Convert.ToDateTime(dataGridView1[1, i].Value);
+                x_value[i] = dates.ToOADate();
             }
-            string[] x_name = new string[dataGridView1.RowCount];
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-            {
-                x_name[i] = Convert.ToString(dataGridView1[1, i].Value);
-            }
-            formsPlot2.Plot.XAxis.ManualTickPositions(x_value, x_name);
+
             for (int n = 0; n < len; n++)
             {
                 string label_name = $"Sensor{n + 1}";
@@ -411,6 +479,7 @@ namespace Wireless_Temp
                 }
                 //formsPlot2.Plot.YAxis.(Y_value);
                 formsPlot2.Plot.AddScatter(x_value, Y_value, label: label_name);
+                formsPlot2.Plot.XAxis.DateTimeFormat(true);
                 formsPlot2.Plot.Legend();
             }
             formsPlot2.Refresh();
@@ -428,5 +497,6 @@ namespace Wireless_Temp
             int value = Convert.ToInt32(textBox4.Text);
             modbusClient.WriteMultipleRegisters(address, new int[] { value });
         }
+
     }
 }
