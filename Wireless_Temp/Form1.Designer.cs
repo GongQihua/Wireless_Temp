@@ -447,7 +447,7 @@
             // 
             metroLabel1.Font = new Font("Microsoft YaHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             metroLabel1.IsDerivedStyle = true;
-            metroLabel1.Location = new Point(6, 16);
+            metroLabel1.Location = new Point(789, 14);
             metroLabel1.Name = "metroLabel1";
             metroLabel1.Size = new Size(303, 42);
             metroLabel1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
@@ -666,7 +666,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(119, 23);
             textBox1.TabIndex = 8;
-            textBox1.Text = "127.0.0.1";
+            textBox1.Text = "192.168.1.230";
             // 
             // label6
             // 
