@@ -44,3 +44,4 @@ D:\Wireless_Temp\Wireless_Temp\obj\Release\net8.0-windows\Wireless_Temp.pdb
 D:\Wireless_Temp\Wireless_Temp\obj\Release\net8.0-windows\Wireless_Temp.genruntimeconfig.cache
 D:\Wireless_Temp\Wireless_Temp\obj\Release\net8.0-windows\ref\Wireless_Temp.dll
 D:\Wireless_Temp\Wireless_Temp\obj\Release\net8.0-windows\Wireless_Temp.sourcelink.json
+D:\Wireless_Temp\Wireless_Temp\obj\Release\net8.0-windows\Wireless_Temp.Form2.resources

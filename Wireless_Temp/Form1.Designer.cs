@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             metroControlBox1 = new ReaLTaiizor.Controls.MetroControlBox();
             metroTabControl1 = new ReaLTaiizor.Controls.MetroTabControl();
             tabPage1 = new TabPage();
+            checkBox4 = new CheckBox();
             dataGridView2 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
-            pictureBox4 = new PictureBox();
             metroButton1 = new ReaLTaiizor.Controls.MetroButton();
             metroEllipse2 = new ReaLTaiizor.Controls.MetroEllipse();
             metroEllipse1 = new ReaLTaiizor.Controls.MetroEllipse();
@@ -47,7 +48,6 @@
             checkBox1 = new CheckBox();
             metroLabel2 = new ReaLTaiizor.Controls.MetroLabel();
             metroLabel1 = new ReaLTaiizor.Controls.MetroLabel();
-            pictureBox5 = new PictureBox();
             tabPage2 = new TabPage();
             formsPlot1 = new ScottPlot.FormsPlot();
             tabPage3 = new TabPage();
@@ -75,11 +75,10 @@
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             metroTile1 = new ReaLTaiizor.Controls.MetroTile();
+            timer1 = new System.Windows.Forms.Timer(components);
             metroTabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -145,8 +144,8 @@
             // tabPage1
             // 
             tabPage1.BackgroundImageLayout = ImageLayout.Stretch;
+            tabPage1.Controls.Add(checkBox4);
             tabPage1.Controls.Add(dataGridView2);
-            tabPage1.Controls.Add(pictureBox4);
             tabPage1.Controls.Add(metroButton1);
             tabPage1.Controls.Add(metroEllipse2);
             tabPage1.Controls.Add(metroEllipse1);
@@ -158,7 +157,6 @@
             tabPage1.Controls.Add(checkBox1);
             tabPage1.Controls.Add(metroLabel2);
             tabPage1.Controls.Add(metroLabel1);
-            tabPage1.Controls.Add(pictureBox5);
             tabPage1.Location = new Point(4, 42);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -166,6 +164,18 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Main";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Enabled = false;
+            checkBox4.Font = new Font("Microsoft YaHei UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            checkBox4.Location = new Point(1616, 809);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(155, 35);
+            checkBox4.TabIndex = 16;
+            checkBox4.Text = "User Login";
+            checkBox4.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -189,17 +199,6 @@
             // 
             Column2.HeaderText = "Sensor Value(℃)";
             Column2.Name = "Column2";
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackgroundImage = Properties.Resources.signal1;
-            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox4.Location = new Point(1820, 879);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(62, 50);
-            pictureBox4.TabIndex = 12;
-            pictureBox4.TabStop = false;
-            pictureBox4.Visible = false;
             // 
             // metroButton1
             // 
@@ -409,7 +408,7 @@
             checkBox2.AutoSize = true;
             checkBox2.Enabled = false;
             checkBox2.Font = new Font("Microsoft YaHei UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            checkBox2.Location = new Point(1548, 894);
+            checkBox2.Location = new Point(1616, 894);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(250, 35);
             checkBox2.TabIndex = 3;
@@ -422,7 +421,7 @@
             checkBox1.AutoSize = true;
             checkBox1.Enabled = false;
             checkBox1.Font = new Font("Microsoft YaHei UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            checkBox1.Location = new Point(1548, 853);
+            checkBox1.Location = new Point(1616, 853);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(266, 35);
             checkBox1.TabIndex = 2;
@@ -456,16 +455,6 @@
             metroLabel1.Text = "Tofflon Wireless Temp";
             metroLabel1.ThemeAuthor = "Taiizor";
             metroLabel1.ThemeName = "MetroLight";
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.BackgroundImage = Properties.Resources.signal2;
-            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Location = new Point(1820, 882);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(62, 50);
-            pictureBox5.TabIndex = 13;
-            pictureBox5.TabStop = false;
             // 
             // tabPage2
             // 
@@ -811,6 +800,12 @@
             metroTile1.ThemeAuthor = "Taiizor";
             metroTile1.ThemeName = "MetroLight";
             metroTile1.TileAlign = ReaLTaiizor.Enum.Metro.TileAlign.Topleft;
+            metroTile1.Click += metroTile1_Click;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
@@ -833,8 +828,6 @@
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
@@ -891,10 +884,10 @@
         private Label label6;
         private Label label7;
         private ReaLTaiizor.Controls.MetroTile metroTile2;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
         private DataGridView dataGridView2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Timer timer1;
+        public static CheckBox checkBox4;
     }
 }

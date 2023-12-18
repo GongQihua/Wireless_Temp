@@ -44,3 +44,4 @@ D:\Wireless_Temp\Wireless_Temp\bin\Debug\net8.0-windows\runtimes\win-x86\native\
 D:\Wireless_Temp\Wireless_Temp\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Wireless_Temp\Wireless_Temp\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Wireless_Temp\Wireless_Temp\obj\Debug\net8.0-windows\Wireless_Temp.sourcelink.json
+D:\Wireless_Temp\Wireless_Temp\obj\Debug\net8.0-windows\Wireless_Temp.Form2.resources

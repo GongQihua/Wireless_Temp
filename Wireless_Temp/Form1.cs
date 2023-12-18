@@ -24,8 +24,11 @@ namespace Wireless_Temp
             InitializeComponent();
             SetWindowRegion();
             Control.CheckForIllegalCrossThreadCalls = false;
-            time = System.DateTime.Now;
-            toolStripStatusLabel2.Text = "Starting Time: " + time.ToString();
+            timer1.Interval = 1000;
+            timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            timer1.Start();
+            //time = System.DateTime.Now;
+            //toolStripStatusLabel2.Text = "Starting Time: " + time.ToString();
             //Thread thread3 = new Thread(status_check);
             //thread3.IsBackground = true;
             //thread3.Start();
@@ -36,6 +39,7 @@ namespace Wireless_Temp
         public int end_signal = 0;
         public int Read_model = 0;
         public int surprise = 0;
+        public int login_status = 0;
         public void SetWindowRegion()//画圆角
         {
             GraphicsPath FormPath;
@@ -146,8 +150,6 @@ namespace Wireless_Temp
             MessageBox.Show("Sensor initialized");
 
             checkBox2.Checked = true;
-            pictureBox4.Visible = true;
-            pictureBox5.Visible = false;
         }
 
         private void metroEllipse1_Click(object sender, EventArgs e)
@@ -389,15 +391,15 @@ namespace Wireless_Temp
         //}
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if(surprise < 10)
+            if (surprise < 10)
             {
                 surprise++;
-                if(surprise > 2 && surprise < 9)
+                if (surprise > 2 && surprise < 9)
                 {
                     string ques = new string('?', surprise - 2);
                     MessageBox.Show(ques);
                 }
-                if(surprise == 9)
+                if (surprise == 9)
                 {
                     MessageBox.Show("手贱？");
                     MessageBox.Show("最后再给你一次机会，不要再点了！");
@@ -498,5 +500,15 @@ namespace Wireless_Temp
             modbusClient.WriteMultipleRegisters(address, new int[] { value });
         }
 
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = "System Time: " + System.DateTime.Now.ToString();
+        }
     }
 }
