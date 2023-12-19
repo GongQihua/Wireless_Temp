@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5663f438-85d2-409a-b0cd-1904c85157fd" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/wireless_temp.metadata.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/wireless_temp.metadata.v7.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/wireless_temp.projects.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/wireless_temp.projects.v7.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Wireless_Temp/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Wireless_Temp/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Wireless_Temp/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Wireless_Temp/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wireless_Temp/obj/Debug/net8.0-windows/Wireless_Temp.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Wireless_Temp/obj/Debug/net8.0-windows/Wireless_Temp.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wireless_Temp/obj/Debug/net8.0-windows/Wireless_Temp.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Wireless_Temp/obj/Debug/net8.0-windows/Wireless_Temp.AssemblyInfoInputs.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2ZhO81gSh42U234pKanHJzNbZ1X" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenDatabaseViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/gongq"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+</project>

@@ -413,6 +413,7 @@ namespace Wireless_Temp
         }
         private void metroTile2_Click(object sender, EventArgs e)
         {
+            comboBox1.Items.Clear();
             SQLiteConnection conn = new SQLiteConnection("Data Source = Wireless_Temp.db;Version=3;");
             conn.Open();
             string sql = "select * from sqlite_master WHERE type = 'table' order by name";
