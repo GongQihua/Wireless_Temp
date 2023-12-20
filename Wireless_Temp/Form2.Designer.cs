@@ -153,6 +153,7 @@
             textBox2.Font = new Font("Microsoft YaHei UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 134);
             textBox2.Location = new Point(906, 312);
             textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
             textBox2.Size = new Size(396, 38);
             textBox2.TabIndex = 10;
             // 

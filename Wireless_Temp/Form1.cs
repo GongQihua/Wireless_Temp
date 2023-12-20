@@ -419,7 +419,7 @@ namespace Wireless_Temp
             string sql = "select * from sqlite_master WHERE type = 'table' order by name";
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = command.ExecuteReader();
-            while (reader.Read())
+            while (reader.Read() && reader["name"] != null)
             {
                 comboBox1.Items.Add(reader["name"].ToString());
             }
