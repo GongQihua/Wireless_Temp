@@ -48,6 +48,12 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )",
+              "autoReferenced": true
+            },
             "ReaLTaiizor": {
               "target": "Package",
               "version": "[3.7.9.7, )"

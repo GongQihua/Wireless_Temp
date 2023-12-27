@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Z4Ulh03/Dp/t/GJRq35H9XujHGXKpYZf8Qo/x9lnqUTZBnMRpcoz6S1D/4JC2WKVuwAUVWtrltOnM1IbhLQqDA==",
+  "dgSpecHash": "+Vn0tTM/uidSG/AB9YKZ6fNFU+e7hY51uif54Iau25PdmVqiKc1VV+Gi2NPRXcdDCk3zojVj6N7coJTrwc8uHQ==",
   "success": true,
   "projectFilePath": "D:\\Wireless_Temp\\Wireless_Temp\\Wireless_Temp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gongq\\.nuget\\packages\\easymodbustcp.netcore\\1.0.0\\easymodbustcp.netcore.1.0.0.nupkg.sha512",
     "C:\\Users\\gongq\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\gongq\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\gongq\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.0\\microsoft.net.illink.tasks.8.0.0.nupkg.sha512",
     "C:\\Users\\gongq\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.4\\microsoft.netcore.platforms.3.1.4.nupkg.sha512",
     "C:\\Users\\gongq\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\gongq\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",

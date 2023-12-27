@@ -1,0 +1,9 @@
+C:\Users\gongq\Desktop\Wireless_Temp\Wireless_Temp.pdb
+C:\Users\gongq\Desktop\Wireless_Temp\D3DCompiler_47_cor3.dll
+C:\Users\gongq\Desktop\Wireless_Temp\PenImc_cor3.dll
+C:\Users\gongq\Desktop\Wireless_Temp\PresentationNative_cor3.dll
+C:\Users\gongq\Desktop\Wireless_Temp\vcruntime140_cor3.dll
+C:\Users\gongq\Desktop\Wireless_Temp\wpfgfx_cor3.dll
+C:\Users\gongq\Desktop\Wireless_Temp\sni.dll
+C:\Users\gongq\Desktop\Wireless_Temp\SQLite.Interop.dll
+C:\Users\gongq\Desktop\Wireless_Temp\Wireless_Temp.exe

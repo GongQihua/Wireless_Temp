@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Wireless_Temp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ddd5117e4b17f378edd18d9037c076d1e847132")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3117a59224bb09a41240fcc58ba494fa435a1cdc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Wireless_Temp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Wireless_Temp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

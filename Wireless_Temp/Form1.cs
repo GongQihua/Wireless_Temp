@@ -25,7 +25,7 @@ namespace Wireless_Temp
             SetWindowRegion();
             Control.CheckForIllegalCrossThreadCalls = false;
             timer1.Interval = 1000;
-            timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            timer1.Tick += new System.EventHandler(this.timer1_Tick!);
             timer1.Start();
             //time = System.DateTime.Now;
             //toolStripStatusLabel2.Text = "Starting Time: " + time.ToString();
@@ -316,6 +316,8 @@ namespace Wireless_Temp
                     Y_value[i] = Convert.ToDouble(dt.Rows[i][n + 2]);
                 }
                 //formsPlot2.Plot.YAxis.(Y_value);
+                //(double[] smoothXs, double[] smoothYs) = ScottPlot.Statistics.Interpolation.Cubic.InterpolateXY(x_value, Y_value, 200);
+                //formsPlot1.Plot.AddScatter(smoothXs, smoothYs, label: label_name);
                 formsPlot1.Plot.AddScatter(x_value, Y_value, label: label_name);
                 formsPlot1.Plot.XAxis.DateTimeFormat(true);
                 formsPlot1.Plot.Legend();
@@ -419,9 +421,9 @@ namespace Wireless_Temp
             string sql = "select * from sqlite_master WHERE type = 'table' order by name";
             SQLiteCommand command = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = command.ExecuteReader();
-            while (reader.Read() && reader["name"] != null)
+            while (reader.Read() && reader["name"].ToString() != null)
             {
-                comboBox1.Items.Add(reader["name"].ToString());
+                comboBox1.Items.Add(reader["name"].ToString()!);
             }
             conn.Close();
         }
@@ -439,7 +441,7 @@ namespace Wireless_Temp
 
             SQLiteConnection conn = new SQLiteConnection("Data Source = Wireless_Temp.db;Version=3;");
             conn.Open();
-            string ob = comboBox1.SelectedItem.ToString();
+            string ob = comboBox1.SelectedItem.ToString()!;
             SQLiteDataAdapter mAdapter = new SQLiteDataAdapter($"select * from {ob}", conn);
             DataTable dt = new DataTable();
             mAdapter.Fill(dt);
